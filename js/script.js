@@ -7,20 +7,56 @@ function showSpoiler(obj)
         inner.style.display = "none";
     }
 
-    (function() {
-        'use strict';
-        window.addEventListener('load', function() {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
+      (function() 
+      {
+        $("#formulario").validate({
+             rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    nombres: "required",
+                    fono: "required",
+                    apelidos: "required",
+                    
+                      
+                    
+                },
+            messages: {
+                email: {
+                    required: 'Ingresa tu correo electrónico',
+                    email: 'Formato de correo no válido'
+                },
+                nombres: {
+                    required: 'Ingresa una contraseña',
+                    minlength: 'Caracteres insuficientes'
+                },
+                fono:{
+                    required: 'Ingrese un número de celular',
+                    minlength: 'Cantidad de digitos insuficiente'
+                },               
+                apellidos:{
+                  required: 'Ingrese un apellido',
+                  minlength: 'Caracteres insuficientes'
+              },  
+            }
+        }); 
+    }); 
+
+    function CambiarMayusculas()
+        {
+            var a = document.getElementById("nom");
+            a.value = a.value.toUpperCase();
+        }
+
+        function CambiarMayusculas2()
+        {
+            var a = document.getElementById("ape");
+            a.value = a.value.toUpperCase();
+        }
+
+        function CambiarMayusculas3()
+        {
+            var a = document.getElementById("ema");
+            a.value = a.value.toUpperCase();
+        }
