@@ -46,42 +46,30 @@
                 </div>
                 <div class="form-group mb-3">
                   
-                  <label>Nombres</label>
-                  <input type="text" class="form-control" id="nom" name="nom" onchange="CambiarMayusculas()"/>
+                  <label> Nombres</label>
+                  <input type="text" class="form-control" id="nombres" name="nombres" minlength="5" required/>
                 </div>
                 <div class="form-group mb-3">
-                  <label>Apellidos</label>
-                  <input type="text" class="form-control" id="ape" name="ape" onchange="CambiarMayusculas2()"/>
+                  <label> Apellidos</label>
+                  <input type="text" class="form-control" id="apellidos" name="apellidos" minlength="5" required/>
                 </div>
                 <div class="form-group mb-3">
-                  <label>Correo</label>
-                  <input type="text" class="form-control" id="ema" name="ema" onchange="CambiarMayusculas3()" />
+                  <label> Correo</label>
+                  <input type="text" class="form-control" id="email" name="email" minlength="3" required placeholder="xxxx@dominio.com"/>
                 </div>
                 <div class="form-group mb-3">
-                  <label>asd</label>
-                  <input type="text" class="form-control" />
+                  <label>Celular</label>
+                  <input type="text" class="form-control" id="celular" name="celular" minlength="9" required/>
                 </div>
-                <div class="form-group text-center">
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio">Option 1
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio">Option 2
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio" >Option 3
-          </label>
-                  </div>
+                <div class="form-group mb-3">
+                  <label for="exampleFormControlTextarea1">Detalles problema (opcional)</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
+              
                 <div class="form-group">
                   <div class="container">
                     <div class="row">
-                      <div class="col"><button class="col-6 btn btn-secondary btn-sm float-left">Reset</button></div>
+            
                       <div class="col"><button class="col-6 btn btn-primary btn-sm float-right">Submit</button></div>
                     </div>
                   </div>
@@ -98,7 +86,7 @@
               <div class="row">
                 <div class="col-lg-4 mb-5 mb-lg-0">
                   <h4 class="text-uppercase mb-4">Quienes Somos</h4>
-                  <p><a href="quienes_somos.html" class="quienessomos">Acerca de Nostros</a></p>
+                  <p><a href="quienes_somos.html" class="quienessomos">Acerca de Nosotros</a></p>
                   <p><a href="Formulario1.html" class="quienessomos">Soporte</a></p>
                   
                 </div>
@@ -112,6 +100,9 @@
                   <a href="#">
                   <img src="img/phone.png" class="redessociales">
                   </a>
+                  <hr>
+                  <button onclick="MostrarFecha()" class="btn-primary">Fecha</button>
+                  <p id="demo"></p>
               </div>
                 <div class="col-lg-4">
                   <h4 class="text-uppercase mb-4">Redes Sociales</h4>
@@ -122,6 +113,7 @@
                   <a href="#">
                   <img src="img/facebook.png" class="redessociales">
                   </a>
+                  
                 </div>
               </div>
             </div>
@@ -136,4 +128,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>      
     <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
 </html>

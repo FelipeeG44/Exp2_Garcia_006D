@@ -9,7 +9,7 @@ function showSpoiler(obj)
 
       (function() 
       {
-        $("#formulario").validate({
+        $("#formulario1").validate({
              rules: {
                     email: {
                         required: true,
@@ -31,32 +31,44 @@ function showSpoiler(obj)
                     required: 'Ingresa una contraseña',
                     minlength: 'Caracteres insuficientes'
                 },
-                fono:{
+                celular:{
                     required: 'Ingrese un número de celular',
                     minlength: 'Cantidad de digitos insuficiente'
                 },               
                 apellidos:{
                   required: 'Ingrese un apellido',
                   minlength: 'Caracteres insuficientes'
-              },  
+              }, 
+                
+                
             }
         }); 
     }); 
 
-    function CambiarMayusculas()
-        {
-            var a = document.getElementById("nom");
-            a.value = a.value.toUpperCase();
-        }
+    function MostrarFecha() 
+    {
+        document.getElementById("demo").innerHTML = Date();
+    }
 
-        function CambiarMayusculas2()
+    $(document).ready(function()
         {
-            var a = document.getElementById("ape");
-            a.value = a.value.toUpperCase();
-        }
+            $("#enviar").click(function(){
 
-        function CambiarMayusculas3()
-        {
-            var a = document.getElementById("ema");
-            a.value = a.value.toUpperCase();
-        }
+                $.get("https://apis.digital.gob.cl/fl/feriados/2021",
+                    function(data){
+                        
+                        $.each(data,function(i,item){
+                            $("#fechas").append("<tr><td>"+item.nombre+"</td><td>"+item.fecha +
+                            "</td><td>"+ item.tipo+ "</td><td>"+item.irrenunnciable+"</td></tr>");
+                            
+
+                        });
+
+                    });
+            });
+        })
+
+
+   
+
+    
