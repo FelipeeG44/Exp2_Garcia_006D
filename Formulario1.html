@@ -20,13 +20,13 @@
     label {
         clear: both;
         float: left;
-        width: 180px;
+        width: 200px;
     }
 
     button {
         clear: both;
         float: left;
-        width: 50px;
+        width: 100px;
     }
 
     .error-control {
@@ -34,7 +34,7 @@
     }
 
     label.error {
-        color: red;
+        color: rgb(255, 166, 0);
         width: 300px;
         font-size: 0.8em;
         margin-top: -5px;
@@ -43,8 +43,8 @@
     
     #caja{
         margin-top:50px;
-        margin-left:30px;
-   
+        margin-left:30px ;
+        
     }
 
 
@@ -61,6 +61,8 @@
                     fono: "required",                   
                     nombres:"required",
                     apellidos:"required",
+                    DetalleBreve:"required",
+                    explicacion:"required",
                     }, 
             messages: {
                 email: {
@@ -83,6 +85,11 @@
                     required: 'Ingrese detalles del problema brevemente',
                     minlength: 'De más detalles de su problema'
 
+                },
+                explicacion: {
+                    required: 'Ingrese su problema',
+                    minlength: 'De más detalles de su problema'
+
                 }
             }
         }); 
@@ -94,6 +101,8 @@
 <body>
     <h1>Ticket Soporte</h1>
     <hr>
+    <h3>Porfavor ingrese los datos pedidos a continuación</h3>
+    
     <div id="caja" >
     <form id="mi-formulario" action="index.html">
         <label>Nombres: </label>
@@ -107,13 +116,23 @@
       
         <label>Celular: </label>
         <input type="text" name="fono" minlength="9" required>
+
+        <label>Problema: </label>
+        <input type="text" name="explicacion" minlength="6" required>
            
-        <label>Detalle breve: </label>
+        <label>Detalle Breve: </label>
         <input type="text" name="DetalleBreve" minlength="6" required>
         
         <br>
         <button>Enviar</button>
       </form>
     </div>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br>
+    <p><a href="index.html" >Volver al Inicio</a></p>
 </body>
 </html>

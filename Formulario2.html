@@ -1,226 +1,161 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Formulario2</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
-        <link href="css/styles.css" type="text/css" rel="stylesheet">
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-sm navbar-light fondobar">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-              <a class="navbar-brand" href="#">
-                <img src="img/logo_transparent.png" width="100" height="100" alt="">
-              </a>
-              <div class="collapse navbar-collapse" id="opciones">   
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link titulos" href="index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link titulos" href="galeria.html">Productos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link titulos" href="quienes_somos.html">Quienes Somos</a>
-                  </li>          
-                </ul>
-              </div>
-        </nav>
-        <br>
-        <div class="container">
-        <h3>Encuesta de satisfacción</h3>
+
+<head>
+  <title>Formulario1</title>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+  <style>
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+    input {
+        float: left;
+        width: 200px;
+        margin-bottom: 10px;
+    }
+
+    label {
+        clear: both;
+        float: left;
+        width: 200px;
+    }
+
+    button {
+        clear: both;
+        float: left;
+        width: 100px;
+    }
+
+    .error-control {
+        border: 1px solid red;
+    }
+
+    label.error {
+        color: rgb(255, 166, 0);
+        width: 300px;
+        font-size: 0.8em;
+        margin-top: -5px;
+        margin-bottom: 10px;
+    }
+    
+    #caja{
+        margin-top:50px;
+        margin-left:30px ;
+        
+    }
+
+
+  </style>
+  <script>
+      $(function() 
+      {
+        $("#mi-formulario").validate({
+             rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    fono: "required",                   
+                    nombres:"required",
+                    apellidos:"required",
+                    codigo:"required",
+                    direccion:"required",
+                    numero:"required",
+                    razon:"requiered",
+                    }, 
+            messages: {
+                email: {
+                    required: 'Ingresa tu correo electrónico',
+                    email: 'Formato de correo no válido'
+                },
+                nombres: {
+                    required: 'Ingrese sus nombres',
+                    minlength: 'Caracteres insuficientes'
+                },
+                fono:{
+                    required: 'Ingrese un número de celular',
+                    minlength: 'Cantidad de digitos insuficiente'
+                },
+                apellidos:{
+                    required: 'Ingrese sus apellidos',
+                    minlength: 'Caracteres insuficientes'
+                },
+                codigo: {
+                    required: 'Ingrese su código postal',
+                    minlength: 'Código inválido'
+
+                },
+                direccion: {
+                    required: 'Ingrese su direccion',
+                    minlength: 'Cantidad de caracteres insuficientes'
+                  
+
+                },
+                numero: {
+                    required: 'Ingrese el numero de su dirección',
+                    minlength: 'Cantidad de numeros insuficientes'
+                  
+
+                },
+                razon: {
+                    required: 'Ingrese su razon para participar',
+                    minlength: 'minímo 10 palabras'
+                  
+
+                }
+            }
+        }); 
+    }); 
+  </script>
+   
+</head>
+
+<body>
+    <h1>CONCURSO ARTETODO</h1>
+    <hr>
+    <h3>Ingrese sus datos para participar en el concurso</h3>
+    
+    <div id="caja" >
+    <form id="mi-formulario" action="index.html">
+        <label>Nombres: </label>
+        <input type="text" name="nombres" minlength="5" required>
+
+        <label>Apellidos:</label>
+        <input type="text" name="apellidos" minlength="5" required>
+
+        <label>Correo Electrónico: </label>
+        <input type="text" name="email" required placeholder="nombre@dominio.cl">
       
-        <hr></div><br>
-        <div class="container-fluid">
-          <div class="row justify-content-center align-items-center h-100">
-            <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-7">
-              <form action="">
-                
-                <h5>Que tan satisfecho estas con nuestra atención</h5>
-                <hr>
-                <div class="form-group text-center mb-5">
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio" required>Muy Insatisfecho
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio">Insatisfecho
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio">Indiferente
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio">Satisfecho
-          </label>
-                </div>
-                <div class="form-check-inline">
-                  <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optradio">Muy Satisfecho
-        </label>
-              </div>
-                </div>
-                <h5>Que tan frecuente compras en nuestra pagina</h5>
-                <hr>
-                <div class="form-group text-center mb-5">
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio2" required>Nunca
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio2">Algunas veces
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio2">A veces
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio2">Muy seguido
-          </label>
-                </div>
-                <div class="form-check-inline">
-                  <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optradio2">Siempre
-        </label>
-              </div>
-                </div>
-                <h5>Que tan satisfecho estas con el funcionamiento de la pagina</h5>
-                <hr>
-                <div class="form-group text-center mb-5">
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio3" required >Muy Insatisfecho
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio3">Insatisfecho
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio3">Indiferente
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio3">Satisfecho
-          </label>
-                </div>
-                <div class="form-check-inline">
-                  <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optradio3">Muy Satisfecho
-        </label>
-              </div>
-                </div>
-                <h5>Que tan satisfecho estas con la calidad de los productos</h5>
-                <hr>
-                <div class="form-group text-center mb-5">
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio4" required >Muy Insatisfecho
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio4">Insatisfecho
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio4">Indiferente
-          </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio4">Satisfecho
-          </label>
-                </div>
-                <div class="form-check-inline">
-                  <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optradio4">Muy Satisfecho
-        </label>
-              </div>
-                </div>
-                <div class="form-group mb-3">
-                  <label for="exampleFormControlTextarea1">Comentarios adicionales (opcional)</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                  <div class="container">
-                    <div class="row">
-                      
-                      <div class="col"><button class="col-6 btn btn-primary btn-sm float-right">Submit</button></div>
-                    </div>
-                  </div>
-                </div>
-        
-              </form>
-            </div>
-          </div>
-        </div>
+        <label>Celular: </label>
+        <input type="text" name="fono" minlength="9" required>
 
+        <label>Código: </label>
+        <input type="text" name="codigo" minlength="7" required>
+           
+        <label>Dirección: </label>
+        <input type="text" name="direccion" minlength="6" required>
+
+        <label>Numero: </label>
+        <input type="text" name="numero" minlength="4" required>
+
+        <label>Razon: </label>
+        <input type="text" name="razon" minlength="10" required>
+        
         <br>
+        <button>Enviar</button>
         
-        
-        <footer class="footer text-center">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                  <h4 class="text-uppercase mb-4">Quienes Somos</h4>
-                  <p><a href="quienes_somos.html" class="quienessomos">Acerca de Nosotros</a></p>
-                  <p><a href="Formulario1.html" class="quienessomos">Soporte</a></p>    
-                  <p><a href="Dias.html" class="quienessomos">Días de Atención</a></p> 
-                  <p><a href="Formulario2.html" class="quienessomos">Encuesta de Satisfacción</a></p> 
-                </div>
-              
-              <div class="col-lg-4 mb-5 mb-lg-0">
-                  <h4 class="text-uppercase mb-4">Contacto</h4>
-                  <a href="#">
-                    <img src="img/gmail.png" class="redessociales">
-                  </a> 
-                  <br> 
-                  <a href="#">
-                  <img src="img/phone.png" class="redessociales">
-                  </a>
-                  <hr>
-                  <button onclick="MostrarFecha()" class="btn-primary">Fecha</button>
-                  <p id="demo"></p>
-              </div>
-                <div class="col-lg-4">
-                  <h4 class="text-uppercase mb-4">Redes Sociales</h4>
-                  <a href="#">
-                  <img src="img/twitter.png" class="redessociales">
-                  </a>
-                  <br>
-                  <a href="#">
-                  <img src="img/facebook.png" class="redessociales">
-                  </a>
-                </div>
-              </div>
-            </div>
-        </footer>
-      <!--Copyright-->
-      <div class="copyright py-4 text-center text-white">
-        <div class="container"><small>FelipeGarcía,©Copyright Derechos Reservados</small></div>
-      </div>
-    </body>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>      
-      <script src="js/script.js"></script>
+      </form>
+    </div>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br>
+    <p><a href="index.html" >Volver al Inicio</a></p>
+</body>
 </html>
