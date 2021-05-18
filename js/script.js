@@ -7,44 +7,6 @@ function showSpoiler(obj)
         inner.style.display = "none";
     }
 
-      (function() 
-      {
-        $("#formulario1").validate({
-             rules: {
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    nombres: "required",
-                    fono: "required",
-                    apelidos: "required",
-                    
-                      
-                    
-                },
-            messages: {
-                email: {
-                    required: 'Ingresa tu correo electrónico',
-                    email: 'Formato de correo no válido'
-                },
-                nombres: {
-                    required: 'Ingresa una contraseña',
-                    minlength: 'Caracteres insuficientes'
-                },
-                celular:{
-                    required: 'Ingrese un número de celular',
-                    minlength: 'Cantidad de digitos insuficiente'
-                },               
-                apellidos:{
-                  required: 'Ingrese un apellido',
-                  minlength: 'Caracteres insuficientes'
-              }, 
-                
-                
-            }
-        }); 
-    }); 
-
     function MostrarFecha() 
     {
         document.getElementById("demo").innerHTML = Date();
@@ -67,6 +29,7 @@ function showSpoiler(obj)
                     });
             });
         })
+
 
 
    
